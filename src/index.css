@@ -1,0 +1,60 @@
+.header{
+display: flex;
+justify-content: space-between;
+border: 2px solid violet;
+background-color: azure;
+}
+
+.logo-container > img {
+  width: 60px;
+}
+
+.links-container > ul {
+  display: flex;
+}
+
+.links {
+  padding: 1px 10px;
+  margin-right: 225px;
+  list-style: none;
+  font-size:x-large;
+}
+
+.body-container {
+  height: 500px;
+}
+.card {
+  width: 196px;
+  padding: 2px 4px;
+  background-color: rgb(240, 242, 245);
+}
+
+.card-container {
+  margin: 5px 5px;
+  transition: 400ms;
+  backface-visibility: hidden;
+}
+
+.card-container:hover {
+
+      cursor: pointer;
+    border: solid black 0.5px;
+  
+}
+
+.card > img {
+  margin: 2px 1px;
+  height: 150px;
+  width: 195px;
+}
+
+.cards-display-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.btn {
+  background-color: blue;
+}
+
