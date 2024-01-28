@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { SWIGGY_API } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
 
@@ -21,6 +22,20 @@ const Body = () => {
     } catch (error) {
       console.error(error);
     }
+
+  }
+
+
+  //condition for shimmer
+  if(!resList.length) {
+    return (
+      
+      <div className="cards-display-container">
+
+        {Array.from({length:14} , (_ , index)=><Shimmer key={index}/>)} {/*check about this from method , its impt */}
+
+      </div>
+    )
 
   }
 

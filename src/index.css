@@ -1,15 +1,15 @@
-.header{
-display: flex;
-justify-content: space-between;
-border: 2px solid violet;
-background-color: azure;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid violet;
+  background-color: azure;
 }
 
-.logo-container > img {
+.logo-container>img {
   width: 60px;
 }
 
-.links-container > ul {
+.links-container>ul {
   display: flex;
 }
 
@@ -17,35 +17,85 @@ background-color: azure;
   padding: 1px 10px;
   margin-right: 225px;
   list-style: none;
-  font-size:x-large;
+  font-size: x-large;
 }
 
 .body-container {
   height: 500px;
 }
+
 .card {
   width: 196px;
   padding: 2px 4px;
   background-color: rgb(240, 242, 245);
+  border-radius: 0.35rem;
+}
+
+.shimmer-card {
+  width: 196px;
+  padding: 2px 4px;
+  background-color: rgb(237, 237, 237);
+  margin: 0px 5px;
+  height: 350px;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+.shimmer-line-container {
+  margin-top: 2rem;
+  margin-left: 0.50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.shimmer-img {
+  background-color: rgb(214, 214, 214);
+  margin: 5px 5px;
+  height: 140px;
+  width: 185px;
+  border-radius: 0.25rem;
+
+}
+
+.shimmer-line {
+  width: 95%;
+  height: 8px;
+  background-color: rgb(214, 214, 214);
+  margin-bottom: 45px;
+  border-radius: 0.125rem;
+}
+
+.shimmer-line:last-child {
+  width: 45%;
 }
 
 .card-container {
   margin: 5px 5px;
   transition: 400ms;
-  backface-visibility: hidden;
+  border-radius: 0.35rem;
+
+
 }
 
 .card-container:hover {
 
-      cursor: pointer;
-    border: solid black 0.5px;
-  
+  cursor: pointer;
+  border: solid black 0.5px;
+
 }
 
-.card > img {
+.card>img {
   margin: 2px 1px;
   height: 150px;
   width: 195px;
+  border-radius: 0.5rem;
+
 }
 
 .cards-display-container {
@@ -53,8 +103,6 @@ background-color: azure;
   flex-wrap: wrap;
 }
 
-
 .btn {
   background-color: blue;
 }
-
