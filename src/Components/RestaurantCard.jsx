@@ -1,6 +1,10 @@
+import { CLOUDINARY_URL } from "../utils/constants";
+
 const RestaurantCard = ({resInfo}) => {
 
-  console.log(resInfo);
+  const {cloudinaryImageId , name , cuisines , avgRating , costForTwo , sla} = resInfo?.info  // destructuring
+
+  // console.log(resInfo);
 
   return (
     
@@ -8,17 +12,17 @@ const RestaurantCard = ({resInfo}) => {
         <div className="card">
             
           <img
-            src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/${resInfo.info.cloudinaryImageId}`}
-            alt=""
+            src={CLOUDINARY_URL + cloudinaryImageId}
+            alt="Restaurant Image"
           />
 
           <div className="info-container">
 
-          <h3 id="res-name" className="res-info">{resInfo.info.name}</h3>
-          <h4 id="res-cuisine" className="res-info">{resInfo.info.cuisines.join(" ")}</h4>
-          <h3 id="rating" className="res-info">{resInfo.info.avgRating}</h3>
-          <h4 id="avg-price" className="res-info">{resInfo.info.costForTwo}</h4>
-          <h4 id="delivery-time" className="res-info">{resInfo.info.sla.deliveryTime} minutes</h4>
+          <h3 id="res-name" className="res-info">{name}</h3>
+          <h4 id="res-cuisine" className="res-info">{cuisines.join(" ")}</h4>
+          <h3 id="rating" className="res-info">{avgRating}</h3>
+          <h4 id="avg-price" className="res-info">{costForTwo}</h4>
+          <h4 id="delivery-time" className="res-info">{sla?.deliveryTime} minutes</h4>
 
           </div>
 
