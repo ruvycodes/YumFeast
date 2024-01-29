@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import RestaurantSearch from "./RestaurantSearch";
 
 const Body = () => {
 
   const [resList, setResList] = useState([]);
 
   useEffect(() => {
+
     fetchData();
+
   }, []);
 
   const fetchData = async () => {
@@ -27,12 +30,12 @@ const Body = () => {
 
 
   //condition for shimmer
-  if(!resList.length) {
+  if (!resList.length) {
     return (
-      
+
       <div className="cards-display-container">
 
-        {Array.from({length:14} , (_ , index)=><Shimmer key={index}/>)} {/*check about this from method , its impt */}
+        {Array.from({ length: 14 }, (_, index) => <Shimmer key={index} />)} {/*check about this from method , its impt */}
 
       </div>
     )
@@ -42,9 +45,8 @@ const Body = () => {
 
   return (
     <div className="body-container">
-      <div className="btn">
-        <button>Search</button>
-      </div>
+      <RestaurantSearch resList={resList}/>
+       {/*search compo here*/}
 
       <div className="cards-display-container">
         {resList.map((restaurant) => (

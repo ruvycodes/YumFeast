@@ -15,7 +15,7 @@
 
 .links {
   padding: 1px 10px;
-  margin-right: 225px;
+  margin-right: 180px;
   list-style: none;
   font-size: x-large;
 }
@@ -105,4 +105,9 @@
 
 .btn {
   background-color: blue;
+}
+
+.login-btn {
+  margin-right: 5rem;
+  width: 4rem;
 }
