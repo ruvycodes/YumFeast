@@ -7,6 +7,7 @@ import RestaurantSearch from "./RestaurantSearch";
 const Body = () => {
 
   const [resList, setResList] = useState([]);
+  const [fliteredResList, setFilteredResList] = useState([]);
 
   useEffect(() => {
 
@@ -16,9 +17,11 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const raw_data = await fetch(SWIGGY_API);
-      const data = await raw_data.json();
-      setResList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      let raw_data = await fetch(SWIGGY_API);
+      let data = await raw_data.json();
+      let res_data = data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+      setResList(res_data);
+      setFilteredResList(res_data);
       // console.log(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info);
       // console.log(data);
 
@@ -26,6 +29,11 @@ const Body = () => {
       console.error(error);
     }
 
+  }
+
+  //filter cards on search this will optimize the code as defining it inisde onchange event will mean it will behave as an anonymous func , meaning that memory will be allocated and once the function is done it will be deallocated , its wastage of time by doing it over and over again
+  const handleSearch = (filtered_res) => {
+    setFilteredResList(filtered_res)
   }
 
 
@@ -45,11 +53,10 @@ const Body = () => {
 
   return (
     <div className="body-container">
-      <RestaurantSearch resList={resList}/>
-       {/*search compo here*/}
+      <RestaurantSearch resList={resList} onSearch={handleSearch} />
 
       <div className="cards-display-container">
-        {resList.map((restaurant) => (
+        {fliteredResList.map((restaurant) => (
 
           <RestaurantCard key={restaurant.info.id} resInfo={restaurant} />
 

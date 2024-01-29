@@ -1,18 +1,18 @@
 import { useState } from "react";
 
-const RestaurantSearch = ({ resList }) => {
+const RestaurantSearch = ({ resList , onSearch }) => {
 
     const [searched_res, setSearchedRes] = useState("");
     // console.log(resList);
 
-    const handleSearch = () => {
+    const filterRes = () => {
 
        let filtered_res = resList.filter((res)=> {
             return res.info.name.toLowerCase().includes(searched_res.toLowerCase())
        })
 
-        console.log(filtered_res);
-        setSearchedRes(filtered_res);
+        console.log(searched_res);
+        onSearch(filtered_res)
 
     }
 
@@ -24,7 +24,7 @@ const RestaurantSearch = ({ resList }) => {
             </div>
 
             <div className="search-res-btn container">
-                <button className="search-res-btn" onClick={handleSearch}>Search</button>
+                <button className="search-res-btn" onClick={filterRes}>Search</button>
             </div>
         </div>
 
