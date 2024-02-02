@@ -16,9 +16,9 @@ const Header = () => {
 
       <div className="links-container">
         <ul>
-          <li className="links"><Link to="/">Home</Link></li>
-          <li className="links"><Link to="/about">About Us</Link></li>
-          <li className="links"><Link to="/contact">Contact Us</Link></li>
+          <li className="links"><Link className="router-link" to="/">Home</Link></li>
+          <li className="links"><Link className="router-link" to="/about">About Us</Link></li>
+          <li className="links"><Link className="router-link" to="/contact">Contact Us</Link></li>
           <li className="links">User Cart</li> {/*add a cart icon here later*/}
           <button className="login-btn" onClick={()=>{btn==="Login"?setBtn("Logout"):setBtn("Login")}}>{btn}</button> {/*simple conditinal rendering */}
         </ul>

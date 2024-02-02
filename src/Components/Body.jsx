@@ -3,6 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import RestaurantSearch from "./RestaurantSearch";
+import { Link } from "react-router-dom";
+import RestaurantMenu from "./RestaurantMenu";
 
 const Body = () => {
 
@@ -23,7 +25,7 @@ const Body = () => {
       setResList(res_data);
       setFilteredResList(res_data);
       // console.log(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info);
-      console.log(data);
+      // console.log(res_data);
 
     } catch (error) {
       console.error(error);
@@ -58,7 +60,7 @@ const Body = () => {
       <div className="cards-display-container">
         {fliteredResList.map((restaurant) => (
 
-          <RestaurantCard key={restaurant.info.id} resInfo={restaurant} />
+          <Link className='router-link' to={"/restaurant/"+restaurant.info.id} key={restaurant.info.id}><RestaurantCard  resInfo={restaurant} /></Link>
 
         ))}
       </div>
