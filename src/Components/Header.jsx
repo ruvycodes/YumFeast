@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useCheckOnline from "../utils/useCheckOnline";
 
 const Header = () => {
 
-  const [btn , setBtn] = useState("Login")
+  const [btn, setBtn] = useState("Login")
 
   return (
 
@@ -20,7 +21,7 @@ const Header = () => {
           <li className="links"><Link className="router-link" to="/about">About Us</Link></li>
           <li className="links"><Link className="router-link" to="/contact">Contact Us</Link></li>
           <li className="links">User Cart</li> {/*add a cart icon here later*/}
-          <button className="login-btn" onClick={()=>{btn==="Login"?setBtn("Logout"):setBtn("Login")}}>{btn}</button> {/*simple conditinal rendering */}
+          <button className="login-btn" onClick={() => { btn === "Login" ? setBtn("Logout") : setBtn("Login") }}>{btn}</button> {/*simple conditinal rendering */}
         </ul>
       </div>
     </div>
