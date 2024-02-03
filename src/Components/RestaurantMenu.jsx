@@ -22,20 +22,24 @@ const RestaurantMenu = () => {
           return card.card.card.categories.flatMap((category) =>
             category?.itemCards
               ? category.itemCards.map((item) => (
-                  <div key={item.card.info.id}>
+                <div className="flex justify-center">
+                  <div key={item.card.info.id} className="bg-amber-300 m-2 h-24 w-96 flex justify-center items-center">
                     <p>
                       {item.card.info.name}: Rs {item.card.info.price / 100}
                     </p>
                   </div>
-                ))
+                </div>
+              ))
               : []
           );
         } else if (card.card?.card?.itemCards) {
           return card.card.card.itemCards.map((item) => (
-            <div key={item.card.info.id}>
-              <p>
-                {item.card.info.name}: Rs {item.card.info.price / 100}
-              </p>
+            <div className="flex justify-center">
+              <div key={item.card.info.id} className="bg-amber-100 m-2 h-24 w-96 flex justify-center items-center">
+                <p>
+                  {item.card.info.name}: Rs {item.card.info.price / 100}
+                </p>
+              </div>
             </div>
           ));
         }
