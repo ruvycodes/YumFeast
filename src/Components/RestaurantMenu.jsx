@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useFetchMenu from "../utils/useFetchMenu";
+import MenuAccordian from "./MenuAccordian";
 
 const RestaurantMenu = () => {
   const { resid } = useParams();
@@ -9,6 +10,11 @@ const RestaurantMenu = () => {
     return <div>Loading..</div>;
   }
 
+  const filteredTitle = resMenu.filter((data) => { return data?.card?.card?.itemCards }); //check if title exists in a card
+  console.log(filteredTitle);
+
+  // console.log(filteredTitle);
+
   return (
     <>
       <h1>Ye hai humaara MENUUUU</h1>
@@ -17,7 +23,7 @@ const RestaurantMenu = () => {
                  <p key={dish?.card?.info?.id}>{(dish?.card?.info?.name)}</p>
             ))} */}
 
-      {resMenu.map((card) => {
+      {/* {resMenu.map((card) => {
         if (card.card?.card?.categories) {
           return card.card.card.categories.flatMap((category) =>
             category?.itemCards
@@ -44,7 +50,11 @@ const RestaurantMenu = () => {
           ));
         }
         return null;
-      })}
+      })} */}
+
+      {
+        filteredTitle.map((title) => <MenuAccordian accordianData={title?.card?.card} />)
+      }
     </>
   );
 };
