@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const MenuAccordian = ({ accordianData }) => {
+const MenuAccordian = ({ accordianData}) => {
 
     const [accordianToggle, setAccordianToggle] = useState(false);
     const handleClick = () => {
@@ -18,7 +18,7 @@ const MenuAccordian = ({ accordianData }) => {
             {accordianToggle && <div>  {/*take a look at this feature its a way for conditonal rendering , it will only render when accordainToggle is true cuz && of two elements will be false if any one of them gets false*/}
                 {accordianData.itemCards.map((item) => {
                     return (
-                        <ItemList item={item} />
+                         <ItemList key={item.card.info.id} item={item} />
                     );
                 })}
             </div>}

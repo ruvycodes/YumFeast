@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import useFetchMenu from "../utils/useFetchMenu";
 import MenuAccordian from "./MenuAccordian";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resid } = useParams();
   const resMenu = useFetchMenu(resid);
+  const [showIndex, setShowIndex] = useState(null)
 
   if (!resMenu.length) {
     return <div>Loading..</div>;
@@ -53,7 +55,7 @@ const RestaurantMenu = () => {
       })} */}
 
       {
-        filteredTitle.map((title) => <MenuAccordian accordianData={title?.card?.card} />)
+        filteredTitle.map((title, index) => <MenuAccordian accordianData={title?.card?.card} />)
       }
     </>
   );
