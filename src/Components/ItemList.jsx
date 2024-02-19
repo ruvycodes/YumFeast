@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
 import { CLOUDINARY_URL } from "../utils/constants";
+import { addItem } from "../utils/slice/cartSlice";
 
 
 const ItemList = ({ item }) => {
+
+    const dispatch = useDispatch();
+    const handleAddItem = () => {
+      dispatch(addItem(item))
+    }
 
     return (
 
@@ -11,7 +18,7 @@ const ItemList = ({ item }) => {
                 <span className=" py-1 px-2 ml-1 text-gray-400">Rs {item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
             </div>
             <div className="relative">
-                <button className="absolute top-8 left-0 bg-gray-800 text-white px-1 rounded-sm">Add</button>
+                <button className="absolute top-8 left-0 bg-gray-800 text-white px-1 rounded-sm" onClick={handleAddItem}>Add</button>
                 <img className="w-28 h-[90px] rounded-md mt-10 shadow-md" src={CLOUDINARY_URL + item.card.info.imageId} alt="" />
             </div>
             <div className="w-10/12">

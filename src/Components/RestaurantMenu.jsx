@@ -55,7 +55,7 @@ const RestaurantMenu = () => {
       })} */}
 
       {
-        filteredTitle.map((title, index) => <MenuAccordian accordianData={title?.card?.card} />)
+        filteredTitle.map((title, index) => <MenuAccordian key={index} accordianData={title?.card?.card} />)
       }
     </>
   );

@@ -5,6 +5,7 @@ import Contact from "../Components/Contact";
 import Error from "../Components/Error";
 import Body from "../Components/Body";
 import RestaurantMenu from "../Components/RestaurantMenu";
+import Cart from "../Components/Cart";
 
 const AppRouter = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const AppRouter = createBrowserRouter([
             {
                 path: "/restaurant/:resid",
                 element: <RestaurantMenu/>
+            },
+
+            {
+                path: "/cart",
+                element: <Cart/>
             }
         ]
     }
