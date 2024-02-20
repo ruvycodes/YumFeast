@@ -11,7 +11,7 @@ const useFetchMenu = (resid) => {
         let raw = await fetch(MENU_API + resid);
         let data = await raw.json();
         // setResMenu(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards || data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.categories[0].itemCards);
-        setResMenu(data?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+        setResMenu(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
     }
 
