@@ -23,7 +23,7 @@ const Header = () => {
           <li className="links mx-20 mb-1 p-4 text-2xl "><Link className="router-link" to="/about">About Us</Link></li>
           <li className="links mx-20 mb-1 p-4 text-2xl "><Link className="router-link" to="/contact">Contact Us</Link></li>
           <Link to='/cart' className="links mx-20 mb-1 p-4 text-2xl ">User Cart - {cartItems.length}</Link> {/*add a cart icon here later*/}
-          <button className="login-btn mx-20 mb-1 p-4 text-2xl" onClick={() => { btn === "Login" ? setBtn("Logout") : setBtn("Login") }}>{btn}</button> {/*simple conditinal rendering */}
+          <button className={`login-btn mx-20 mb-1 p-4 text-2xl ${btn === 'Logout' && 'mx-[72px]'}`} onClick={() => { btn === "Login" ? setBtn("Logout") : setBtn("Login") }}>{btn}</button> {/*simple conditinal rendering */}
         </ul>
       </div>
     </div>
