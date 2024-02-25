@@ -8,7 +8,7 @@ import useFetchRestaurant from "../utils/useFetchRestaurant";
 const Body = () => {
 
   const [fliteredResList, setFilteredResList] = useState([]);
-  const resList = useFetchRestaurant();  
+  const resList = useFetchRestaurant();
 
   useEffect(() => { setFilteredResList(resList) }, [resList])
   const RestaurantCardWithOffer = offerLabel(); // call high order component to get card with offer
@@ -22,9 +22,9 @@ const Body = () => {
   if (!resList.length) {
     return (
 
-      <div className="cards-display-container">
+      <div className="cards-display-container flex flex-wrap">
 
-        {Array.from({ length: 14 }, (_, index) => <Shimmer key={index} />)} {/*check about this from method , its impt */}
+        {Array.from({ length: 20 }, (_, index) => <Shimmer key={index} />)} {/*check about this from method , its impt */}
 
       </div>
     )
