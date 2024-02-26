@@ -5,6 +5,7 @@ const cartSlice = createSlice({
     name: "Cart",
     initialState: {
         items: [],
+        showNotification: false,
     },
 
     reducers: {
@@ -59,9 +60,14 @@ const cartSlice = createSlice({
                     break;
                 }
             }
+        },
+
+        displayNotification: (state, action) => {
+            state.showNotification = action.payload
+            console.log(state.showNotification);
         }
     }
 })
 
-export const { addItem, removeItem, clearCart, increaseCount, decreaseCount } = cartSlice.actions
+export const { addItem, removeItem, clearCart, increaseCount, decreaseCount, displayNotification } = cartSlice.actions
 export default cartSlice.reducer;

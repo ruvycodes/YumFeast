@@ -1,13 +1,14 @@
 import { useDispatch } from "react-redux";
 import { CLOUDINARY_URL } from "../utils/constants";
-import { addItem } from "../utils/slice/cartSlice";
+import { addItem, displayNotification } from "../utils/slice/cartSlice";
 
 
 const ItemList = ({ item }) => {
 
     const dispatch = useDispatch();
     const handleAddItem = () => {
-      dispatch(addItem(item))
+        dispatch(addItem(item))
+        dispatch(displayNotification(true))
     }
 
     return (
@@ -19,7 +20,7 @@ const ItemList = ({ item }) => {
             </div>
             <div className="relative">
                 <button className="absolute top-8 left-0 bg-gray-800 text-white px-1 rounded-sm" onClick={handleAddItem}>Add</button>
-                <img className="w-28 h-[90px] rounded-md mt-10 shadow-md" src={CLOUDINARY_URL + item.card.info.imageId} alt="" />
+                <img className="w-28 h-[90px] rounded-md mt-10 shadow-md" src={CLOUDINARY_URL + item.card.info.imageId} alt="Dish image" />
             </div>
             <div className="w-10/12">
                 <p className=" py-1 px-2 ml-1 mr-2 mb-6 text-sm text-gray-400">{item.card.info.description}</p>

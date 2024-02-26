@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useFetchMenu from "../utils/useFetchMenu";
 import MenuAccordian from "./MenuAccordian";
 import { useState } from "react";
+import Notification from "./Notification";
 
 const RestaurantMenu = () => {
   const { resid } = useParams();
@@ -14,12 +15,11 @@ const RestaurantMenu = () => {
 
   const filteredTitle = resMenu.filter((data) => { return data?.card?.card?.itemCards }); //check if title exists in a card
   console.log(filteredTitle);
-
-  // console.log(filteredTitle);
-
+  
   return (
     <>
       <h1>Ye hai humaara MENUUUU</h1>
+      <Notification />
 
       {/* {resMenu.map((dish)=> (
                  <p key={dish?.card?.info?.id}>{(dish?.card?.info?.name)}</p>

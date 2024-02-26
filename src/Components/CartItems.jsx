@@ -23,7 +23,8 @@ const CartItems = ({ item }) => {
 
         <div key={item.card.info.id} className=" flex items-center flex-wrap justify-between border-b border-gray-200">
             <div>
-                <h5 className=" py-1 px-2 ml-1 mt-1 font-semibold">{item.card.info.name} <span className="font-light">x{item.count}</span></h5>
+                {/*in the span inside the h5 below check if the quantity is greater than zero to avoid negative and if the quantity becomes equal to zero then dont pass referenece but call handleRemove immediatley*/}
+                <h5 className=" py-1 px-2 ml-1 mt-1 font-semibold">{item.card.info.name} <span className="font-light">{item.count > 0 ? "x" + item.count : handleRemove()}</span></h5>
                 <span className=" py-1 px-2 ml-1 text-gray-400">Rs {item.card.info.price / 100 || item.card.info.defaultPrice / 100}</span>
             </div>
             <div className="relative">
