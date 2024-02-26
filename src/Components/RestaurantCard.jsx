@@ -40,7 +40,7 @@ export const offerLabel = () => {
       <>
         <div className="label w-48 h-9 absolute text-white mt-36 ml-3 rounded-md">
           {/* check for offer and show it with styling and return it along with the cards*/}
-          <label className="absolute ml-3 text-md font-bold mt-1">{resInfo?.info?.aggregatedDiscountInfoV3?.header + " " + (resInfo?.info?.aggregatedDiscountInfoV3?.subHeader ? resInfo?.info?.aggregatedDiscountInfoV3?.subHeader : "")}</label>
+          <label className="absolute ml-3 text-md font-bold mt-1">{(resInfo?.info?.aggregatedDiscountInfoV3?.header || resInfo?.info?.aggregatedDiscountInfoV3?.subHeader) ? resInfo?.info?.aggregatedDiscountInfoV3?.header + " " + (resInfo?.info?.aggregatedDiscountInfoV3?.subHeader ? resInfo?.info?.aggregatedDiscountInfoV3?.subHeader : "") : ""}</label>
         </div>
         <RestaurantCard resInfo={resInfo} />  
       </>

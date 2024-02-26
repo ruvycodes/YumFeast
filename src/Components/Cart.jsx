@@ -26,7 +26,7 @@ const Cart = () => {
                         <button className=" bg-black text-white p-1 rounded-md" onClick={handleClearCart}>Clear Cart</button>
                     </div>
                     <div className="w-6/12 m-auto">
-                        {addedItems.map((addeditem) => { return <div className=" mb-4 border-b border-l border-t solid border-gray-250 "> <CartItems item={addeditem} /></div> })}
+                        {addedItems.map((addeditem, index) => { return <div key={index} className=" mb-4 border-b border-l border-t solid border-gray-250 "> <CartItems item={addeditem} /></div> })}
                     </div>
                 </div>
             }
